@@ -3,22 +3,35 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stulesheet" href="style/style.css">
+  <link rel="stylesheet" href="style/style.css">
   <title>FakeStore</title>
 </head>
 <body>
     <h1>Товары</h1>
-    <h2></h2>
-    <from id="product-form">
-      <imput type="text" id="productName" placeholder=" Название товара" required>
-      <imput type="text" id="productName" placeholder=" Название товара" required>
-      <imput type="text" id="productName" placeholder=" Название товара" required>
+
+    <!-- Форма добавления товара -->
+    <form id="add-product-form">
+      <input type="text" name="title" placeholder="Название товара" required>
+      <input type="number" name="price" placeholder="Цена товара" required>
+      <textarea name="description" placeholder="Описание товара" required></textarea>
+      <input type="text" name="category" placeholder="Категория товара" required>
       <button type="submit">Добавить товар</button>
-    </from>
+    </form>
 
-    <div id="product-list"></div>
+    <!-- Список товаров -->
+    <div id="products-container"></div>
 
+    <!-- Кнопка загрузки дополнительных товаров -->
+    <button id="load-more-button">Загрузить еще</button>
+
+    <!-- Фильтр категорий -->
+    <select id="category-filter">
+        <option value="">Все категории</option>
+    </select>
+
+    <!-- Сообщения -->
     <div id="message" style="display: none;"></div>
-  <script src="script/logic.js"></script>
+
+    <script src="script/logic.js"></script>
 </body>
 </html>
