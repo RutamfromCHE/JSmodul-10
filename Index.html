@@ -3,35 +3,39 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style/style.css">
   <title>FakeStore</title>
+  <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-    <h1>Товары</h1>
-
+  <header>
+    <h1>FakeStore</h1>
+  </header>
+  <main>
     <!-- Форма добавления товара -->
-    <form id="add-product-form">
-      <input type="text" name="title" placeholder="Название товара" required>
-      <input type="number" name="price" placeholder="Цена товара" required>
-      <textarea name="description" placeholder="Описание товара" required></textarea>
-      <input type="text" name="category" placeholder="Категория товара" required>
-      <button type="submit">Добавить товар</button>
-    </form>
+    <section id="add-product">
+      <h2>Добавить товар</h2>
+      <form id="add-product-form">
+        <input type="text" name="title" placeholder="Название товара" required>
+        <input type="number" name="price" placeholder="Цена товара" required>
+        <textarea name="description" placeholder="Описание товара" required></textarea>
+        <input type="text" name="category" placeholder="Категория" required>
+        <button type="submit">Добавить</button>
+      </form>
+    </section>
 
     <!-- Список товаров -->
-    <div id="products-container"></div>
-
-    <!-- Кнопка загрузки дополнительных товаров -->
-    <button id="load-more-button">Загрузить еще</button>
-
-    <!-- Фильтр категорий -->
-    <select id="category-filter">
+    <section id="products-section">
+      <h2>Товары</h2>
+      <select id="category-filter">
         <option value="">Все категории</option>
-    </select>
+      </select>
+      <div id="products-container"></div>
+      <button id="load-more-button">Загрузить еще</button>
+    </section>
 
-    <!-- Сообщения -->
+    <!-- Сообщение -->
     <div id="message" style="display: none;"></div>
-
-    <script src="script/logic.js"></script>
+  </main>
 </body>
+<script src="script/logic.js"></script>
 </html>
