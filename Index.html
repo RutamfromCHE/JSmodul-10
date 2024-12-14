@@ -1,41 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FakeStore</title>
-  <link rel="stylesheet" href="style/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FakeStore - Интернет-магазин</title>
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
-  <header>
-    <h1>FakeStore</h1>
-  </header>
-  <main>
+    <!-- Header -->
+    <header>
+        <h1>Интернет-магазин FakeStore</h1>
+    </header>
+
+    <!-- Фильтры -->
+    <section id="filters" class="container">
+        <div class="filter-group">
+            <label for="category">Категория:</label>
+            <select id="category">
+                <option value="all">Все категории</option>
+            </select>
+        </div>
+        <div class="filter-group">
+            <button id="apply-filters">Применить фильтры</button>
+        </div>
+    </section>
+
     <!-- Форма добавления товара -->
-    <section id="add-product">
-      <h2>Добавить товар</h2>
-      <form id="add-product-form">
-        <input type="text" name="title" placeholder="Название товара" required>
-        <input type="number" name="price" placeholder="Цена товара" required>
-        <textarea name="description" placeholder="Описание товара" required></textarea>
-        <input type="text" name="category" placeholder="Категория" required>
-        <button type="submit">Добавить</button>
-      </form>
+    <section id="product-form" class="container">
+        <h2>Добавить товар</h2>
+        <form id="add-product-form">
+            <input type="text" id="product-name" placeholder="Название товара" required>
+            <input type="number" id="product-price" placeholder="Цена товара" required>
+            <textarea id="product-description" placeholder="Описание товара" rows="3" required></textarea>
+            <input type="text" id="product-category" placeholder="Категория товара" required>
+            <button type="submit">Добавить товар</button>
+        </form>
     </section>
 
-    <!-- Список товаров -->
-    <section id="products-section">
-      <h2>Товары</h2>
-      <select id="category-filter">
-        <option value="">Все категории</option>
-      </select>
-      <div id="products-container"></div>
-      <button id="load-more-button">Загрузить еще</button>
+    <!-- Сетка товаров -->
+    <section class="container">
+        <h2>Список товаров</h2>
+        <div id="products-container" class="products-grid">
+            <!-- Карточки товаров будут добавлены динамически -->
+        </div>
+        <button id="load-more-button">Загрузить ещё</button>
     </section>
 
-    <!-- Сообщение -->
-    <div id="message" style="display: none;"></div>
-  </main>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 FakeStore. Все права защищены.</p>
+    </footer>
+
+    <!-- Подключение скриптов -->
+    <script src="script/logic.js"></script>
 </body>
-<script src="script/logic.js"></script>
 </html>
+
